@@ -1,8 +1,8 @@
-﻿using Lab2AD.Models;
+﻿using LibApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Lab2AD.Controllers
+namespace LibApp.Controllers
 {
     public class HomeController : Controller
     {

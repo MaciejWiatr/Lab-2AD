@@ -1,4 +1,4 @@
-namespace Lab2AD.Models
+namespace LibApp.Models
 {
     public class ErrorViewModel
     {

@@ -1,0 +1,17 @@
+﻿@model LibApp.ViewModels.IndexCustomersViewModel
+
+@{
+    ViewBag.Title = "All customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>List of all customers</h1>
+<ul>
+    @foreach (var customer in Model.Customers)
+    {
+       
+        <li>
+            <a href="/customers/details/@customer.Id">@customer.Name</a>
+        </li>
+    }
+</ul>

@@ -9,7 +9,12 @@
 @*Use for direct object passing from controller return type f.e. return View(firstName)*@
 @*<h2>@Model.Title</h2>*@
 
-<h2>@Model.Book.Title</h2>
+
+@{
+    var className = Model.Customers.Count == 5 ? "popular" : "new";
+}
+
+<h2 class="@className">@Model.Book.Title</h2>
 
 <ul>
     @if (Model.Customers.Count == 0)

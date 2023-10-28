@@ -1,0 +1,8 @@
+﻿@model LibApp.Models.Customer
+
+@{
+    ViewBag.Title = $"Details of {Model.Name}";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Name, ID: @Model.Id</h1>

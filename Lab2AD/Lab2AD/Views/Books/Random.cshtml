@@ -1,14 +1,26 @@
-﻿@model LibApp.Models.Book;
+﻿@model LibApp.ViewModels.RandomBooksViewModel;
 
 @{
     ViewBag.Title = "Random book";
     Layout = "~/Views/Shared/_Layout.cshtml";
     //var book = ViewBag.Book as Book;
-    var book = ViewData["FirstBook"] as Book;
 }
 
 @*Use for direct object passing from controller return type f.e. return View(firstName)*@
 @*<h2>@Model.Title</h2>*@
 
-<h2>@book.Title</h2>
+<h2>@Model.Book.Title</h2>
+
+<ul>
+    @if (Model.Customers.Count == 0)
+    {
+        <p>No customers found</p>
+    }
+    else
+    @foreach (var customer in Model.Customers)
+    {
+        <li>@customer.Name</li>
+    }
+</ul>
+
 

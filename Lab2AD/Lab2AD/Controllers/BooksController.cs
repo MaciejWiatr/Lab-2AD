@@ -1,4 +1,5 @@
 ﻿using LibApp.Models;
+using LibApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibApp.Controllers
@@ -15,10 +16,22 @@ namespace LibApp.Controllers
                 Title = "Random title"
             };
 
-            ViewBag.Book = firstBook;
-            ViewData["FirstBook"] = firstBook;
+            //ViewBag.Book = firstBook;
+            //ViewData["FirstBook"] = firstBook;
 
-            return View();
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Stefan Ognistatyczka"},
+                new Customer { Name = "Łukasz Cybernetyczna-struna" }
+            };
+
+            var randomBookViewModel = new RandomBooksViewModel
+            {
+                Book = firstBook,
+                Customers = customers
+            };
+
+            return View(randomBookViewModel);
             //return RedirectToAction("Index", "Book", new { page = 1, sortBy="title"});
         }
 

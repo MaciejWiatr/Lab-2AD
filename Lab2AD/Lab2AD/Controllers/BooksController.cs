@@ -1,5 +1,4 @@
 ﻿using LibApp.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibApp.Controllers
@@ -13,10 +12,14 @@ namespace LibApp.Controllers
             {
                 Author = "Test",
                 Id = 123,
-                Title = "test"
+                Title = "Random title"
             };
 
-            return RedirectToAction("Index", "Book", new { page = 1, sortBy="title"});
+            ViewBag.Book = firstBook;
+            ViewData["FirstBook"] = firstBook;
+
+            return View();
+            //return RedirectToAction("Index", "Book", new { page = 1, sortBy="title"});
         }
 
         // GET: BooksController/{pageIndex}&{sortBy}
